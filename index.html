@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Michroma&display=swap" rel="stylesheet">    
+</head>
+<body class="body-daniela">
+    
+    <nav class="navbar bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="logoHobosAcademy2Banda.png" alt="190" width="190" height="117" class="d-inline-block align-text-top" id="imagen_logo_banda">
+            <img src="logoHobosAcademyLetras.png" alt="220" width="440" height="87" class="d-inline-block align-text-top" id="imagen_logo_letras">
+        </a>
+        </div>
+    </nav>
+    <div class="container contenedor-general">
+
+        <div class= "d-flex flex row " id="contenido">
+            
+                <div class="container bpm-ingresado">
+                    
+                    <input type="number" class="bpm-ingresado-input" id="bpm_ingresado">
+                    
+                </div>
+                <div class="container">
+                    <div>    
+                        <a class="btn btn-primary bg-success botones" id="boton_iniciar" role="button">Iniciar</a>    
+                        <a class="btn btn-primary bg-danger botones" id="boton_detener" role="button">Detener</a>
+                    </div>
+                    <div class="contenedor-selector-metricas"> 
+                        <select id= "selector_metricas" class= "form-select">
+                            <option value="0">3</option>
+                            <option value="1" selected>4</option>
+                            <option value="2">5</option>
+                            <option value="3">6</option>
+                            <option value="4">7</option>
+                        </select>    
+                    </div>
+                </div>
+            
+        
+                <div id="metrica_mostrada" class="container">
+            
+                </div>
+        </div>
+    </div>
+<script  type ="module" src= "ejecucionMetronomo.js"></script>    
+<script  src="libs/Bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
