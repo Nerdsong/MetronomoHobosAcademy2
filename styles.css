@@ -1,7 +1,9 @@
 @charset "UTF-8";
-.body-daniela {
+.body-{
   background-color: rgb(255, 255, 255);
 }
+
+
 
 .container {
   display: flex;
