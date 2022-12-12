@@ -1,9 +1,33 @@
 @charset "UTF-8";
 
+@media (max-width: 800px) {
+  .imagen_logo{
+    width: 5rem !important;
+    height: 3.5rem !important;
+  }
+
+  .imagen_letras{
+    width: 15rem !important;
+    height: 3.25rem !important;
+  }
+}
+
+
 .body-{
   background-color: rgb(255, 255, 255);
   font-family: "Francois One", sans-serif !important;
 }
+
+.imagen_logo{
+  width: 10rem;
+  height: 7rem;
+}
+
+.imagen_letras{
+  width: 30rem;
+  height: 6.5rem;
+}
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
