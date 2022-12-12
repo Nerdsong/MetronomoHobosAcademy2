@@ -7,6 +7,7 @@ class Metricas {
     sieteOctavos = [1,0,0,0,0,0,0];
     metricas = [this.tresCuartos,this.cuatroCuartos,this.cincoCuartos,this.seisOctavos, this.sieteOctavos];
     metricaSeleccionada = ""
+    metricaMostrandose= false;
 
     /**
      * 
@@ -35,6 +36,7 @@ class Metricas {
      * @param {Array} metricaSeleccionada 
      */
     muestraMetrica(metricaSeleccionada){
+        this.metricaMostrandose = true;
         document.querySelector("#metrica_mostrada").innerHTML = "";
         let i = 0;
         for(i = 0 ; i < metricaSeleccionada.length; i ++){
@@ -63,7 +65,7 @@ class Metricas {
     setAcentos(){
         let i = 0
         for(i=0; i < this.metricaSeleccionada.length; i++){
-            (document.getElementById(`checkbox_${i}`).checked == true)? this.metricaSeleccionada.splice(i,1,1):this.metricaSeleccionada.splice(i,1,0)
+            (document.getElementById(`checkbox_${i}`).checked == true) ? this.metricaSeleccionada.splice(i,1,1):this.metricaSeleccionada.splice(i,1,0)
         }
     }
     

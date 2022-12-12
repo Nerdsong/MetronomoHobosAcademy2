@@ -24,24 +24,33 @@
         <div class= "d-flex flex row " id="contenido">
             
                 <div class="container bpm-ingresado">
-                    
-                    <input type="number" class="bpm-ingresado-input" id="bpm_ingresado">
-                    
+                    <input type="number" class="bpm-ingresado-input" id="bpm_ingresado" placeholder="BPM">
+                </div>
+                <div class="container">
+                     
+                    <input class= "range-barra" id="barra_rango" type="range" min="20" max="250" value="90" step="1">
+                        
                 </div>
                 <div class="container">
                     <div>    
                         <a class="btn btn-primary bg-success botones" id="boton_iniciar" role="button">Iniciar</a>    
                         <a class="btn btn-primary bg-danger botones" id="boton_detener" role="button">Detener</a>
-                    </div>
+                        </div>
+                </div>
+                <div class="container">    
                     <div class="contenedor-selector-metricas"> 
-                        <select id= "selector_metricas" class= "form-select">
-                            <option value="0">3</option>
-                            <option value="1" selected>4</option>
-                            <option value="2">5</option>
-                            <option value="3">6</option>
-                            <option value="4">7</option>
-                        </select>    
+                        <label class = "label-metricas" for="metricas">Elige una métrica</label>
+                        <select name="metricas" id= "selector_metricas" class= "form-select">
+                            <option value="0">3/4</option>
+                            <option value="1" selected>4/4</option>
+                            <option value="2">5/4</option>
+                            <option value="3">6/4</option>
+                            <option value="4">7/4</option>
+                        </select>
+                          
                     </div>
+                    <a class="btn btn-primary botones" id="boton_instrucciones" role="button" href="instrucciones.html">Instrucciones</a>
+                    
                 </div>
             
         
@@ -51,6 +60,5 @@
         </div>
     </div>
 <script  type ="module" src= "ejecucionMetronomo.js"></script>    
-<script  src="libs/Bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
