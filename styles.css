@@ -128,6 +128,22 @@ input[type=checkbox] {
   border: 0;
 }
 
+.numeros-aleatorios{
+  font-family: "Michroma", sans-serif!important;
+  font-size: 3rem;
+}
+
+.numeros-aleatorios-estilo {
+  text-align: center;
+  width: 3em;
+  padding: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  text-shadow: 0rem 0rem 0.5rem rgb(250, 247, 67);
+  box-shadow: 0rem 0rem 1rem 1rem rgb(255, 255, 255), inset 0rem 0rem 1rem 2rem rgb(255, 255, 255);
+  border: 0;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;

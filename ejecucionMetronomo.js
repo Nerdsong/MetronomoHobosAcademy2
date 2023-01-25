@@ -1,11 +1,15 @@
 import { Metronomo } from "./Metronomo.js";
 import {metrica1} from "./Metronomo.js";
+import { GeneradorAleatorioDeNumeros } from "./generadorAleatorio.js";
 
 const botonInicio = document.getElementById("boton_iniciar");
 const botonDetener = document.getElementById("boton_detener");
 const botoninstrucciones= document.getElementById("boton_instrucciones");
 const selectorMetricas= document.getElementById("selector_metricas");
-const barraDeslizadora = document.getElementById("barra_rango")
+const barraDeslizadora = document.getElementById("barra_rango");
+const BOTON_GENERAR_COMBINACION_ALEATORIA = document.getElementById("boton_numeros_aleatorios");
+const BOTON_COMBINACIÓN_ALEATORIA_ANTERIOR = document.getElementById("boton_numeros_aleatorios_anterior");
+const BOTON_COMBINACIÓN_ALEATORIA_SIGUIENTE = document.getElementById("boton_numeros_aleatorios_siguiente");
 let bpmIngresado = document.getElementById("bpm_ingresado");
 let elMetronomoEstaEnEjecucion = false
 
@@ -38,6 +42,29 @@ class Botones {
         })
         this.cambiarBPM(element)
     }
+
+    generarNuevaCombinacionDeNumeros(element){
+        element.addEventListener ('click', () => {
+                generadorAleatorio1.generarGrupoDeNumerosAleatorio(4,generadorAleatorio1.getCifraMaxima());
+                document.querySelector("#numeros_aleatorios_generados").innerHTML = "" ;
+                generadorAleatorio1.mostrarGrupoDeNumerosAleatorios();
+            }
+        )
+    }
+
+    verCombinacionAnterior(element){
+        element.addEventListener('click', () => {
+        generadorAleatorio1.setIndexDelGrupoEnPantalla( (generadorAleatorio1.getIndexDelGrupoEnPantalla() - 1 )) 
+        generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+        } )
+    }
+
+    verCombinacionSiguiente(element){
+        element.addEventListener('click', () => {
+        generadorAleatorio1.setIndexDelGrupoEnPantalla( (generadorAleatorio1.getIndexDelGrupoEnPantalla() + 1 )) 
+        generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+        } )
+    }
 }
 
 
@@ -47,6 +74,9 @@ botones.detener(botonDetener);
 botones.cambiarMetrica(selectorMetricas);
 botones.cambiarBPM(bpmIngresado);
 botones.cambiarBPMRange(barraDeslizadora);
+botones.generarNuevaCombinacionDeNumeros(BOTON_GENERAR_COMBINACION_ALEATORIA)
+botones.verCombinacionAnterior(BOTON_COMBINACIÓN_ALEATORIA_ANTERIOR);
+botones.verCombinacionSiguiente(BOTON_COMBINACIÓN_ALEATORIA_SIGUIENTE);
 
 
 
@@ -106,6 +136,11 @@ function detenerMetronomoEnEjecucion(){
     elMetronomoEstaEnEjecucion = false
     clearInterval(ejecutarMetronomo);
 }
+
+
+//instanciar un generador de números aleatorios. Funcionalidad que crea un ejercicio ritmico a partir de 4 numeros que en total suman 16
+let generadorAleatorio1= new GeneradorAleatorioDeNumeros();
+generadorAleatorio1.generarGrupoDeNumerosAleatorio(4,generadorAleatorio1.getCifraMaxima())
 
 
 
