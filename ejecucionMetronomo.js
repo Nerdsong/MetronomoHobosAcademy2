@@ -55,14 +55,29 @@ class Botones {
     verCombinacionAnterior(element){
         element.addEventListener('click', () => {
         generadorAleatorio1.setIndexDelGrupoEnPantalla( (generadorAleatorio1.getIndexDelGrupoEnPantalla() - 1 )) 
-        generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+
+        if(generadorAleatorio1.getIndexDelGrupoEnPantalla() > -1 ){
+            generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+            }
+        else{generadorAleatorio1.setIndexDelGrupoEnPantalla(0)
+             generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+        }
         } )
     }
 
     verCombinacionSiguiente(element){
         element.addEventListener('click', () => {
         generadorAleatorio1.setIndexDelGrupoEnPantalla( (generadorAleatorio1.getIndexDelGrupoEnPantalla() + 1 )) 
-        generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+        
+        if(generadorAleatorio1.getIndexDelGrupoEnPantalla() < (generadorAleatorio1.getTamañoDelHistorial())){
+            generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+            console.log("mas grande")
+            }
+
+        else{generadorAleatorio1.setIndexDelGrupoEnPantalla(generadorAleatorio1.getTamañoDelHistorial() - 1 )
+             generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+        }
+
         } )
     }
 }

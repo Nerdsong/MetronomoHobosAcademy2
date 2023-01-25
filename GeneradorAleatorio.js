@@ -10,6 +10,10 @@ class GeneradorAleatorioDeNumeros{
         return this.#cifraMaximaTotal
     }
 
+    getTamañoDelHistorial(){
+        return this.#historial.length
+    }
+
     getIndexDelGrupoEnPantalla(){
         return this.#indexDelGrupoEnPantalla;
     }
@@ -43,7 +47,7 @@ class GeneradorAleatorioDeNumeros{
 
     mostrarGrupoDeNumerosAleatorios(){
         document.querySelector("#numeros_aleatorios_generados").innerHTML = ""
-        this.#historial[this.getIndexDelGrupoEnPantalla()].forEach(numero => {
+            this.#historial[this.getIndexDelGrupoEnPantalla()].forEach(numero => {
             document.querySelector("#numeros_aleatorios_generados").innerHTML += `
             <div class="numeros-aleatorios numeros-aleatorios-estilo">
                 ${numero}
