@@ -48,6 +48,8 @@ class Botones {
                 generadorAleatorio1.generarGrupoDeNumerosAleatorio(4,generadorAleatorio1.getCifraMaxima());
                 document.querySelector("#numeros_aleatorios_generados").innerHTML = "" ;
                 generadorAleatorio1.mostrarGrupoDeNumerosAleatorios();
+                BOTON_COMBINACIÓN_ALEATORIA_SIGUIENTE.className = "btn btn-primary botones";
+                BOTON_COMBINACIÓN_ALEATORIA_ANTERIOR.className = "btn btn-primary botones";
             }
         )
     }
@@ -58,9 +60,11 @@ class Botones {
 
         if(generadorAleatorio1.getIndexDelGrupoEnPantalla() > -1 ){
             generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+            BOTON_COMBINACIÓN_ALEATORIA_SIGUIENTE.className = "btn btn-primary botones";
             }
         else{generadorAleatorio1.setIndexDelGrupoEnPantalla(0)
              generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+             element.className = "btn btn-primary botones bg-danger";
         }
         } )
     }
@@ -71,11 +75,12 @@ class Botones {
         
         if(generadorAleatorio1.getIndexDelGrupoEnPantalla() < (generadorAleatorio1.getTamañoDelHistorial())){
             generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
-            console.log("mas grande")
+            BOTON_COMBINACIÓN_ALEATORIA_ANTERIOR.className = "btn btn-primary botones";
             }
 
         else{generadorAleatorio1.setIndexDelGrupoEnPantalla(generadorAleatorio1.getTamañoDelHistorial() - 1 )
              generadorAleatorio1.mostrarGrupoDeNumerosAleatorios()
+             element.className = "btn btn-primary botones bg-danger"
         }
 
         } )
