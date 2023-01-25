@@ -1,6 +1,6 @@
 import { Metronomo } from "./Metronomo.js";
 import {metrica1} from "./Metronomo.js";
-import { GeneradorAleatorioDeNumeros } from "./GeneradorAleatorio.js";
+import { GeneradorAleatorioDeNumeros } from "./generadorAleatorio.js";
 
 const botonInicio = document.getElementById("boton_iniciar");
 const botonDetener = document.getElementById("boton_detener");
